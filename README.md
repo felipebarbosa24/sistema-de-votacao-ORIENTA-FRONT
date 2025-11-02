@@ -1,7 +1,5 @@
-<div align="center">
-  <h1>Sistema de Votação Estudantil</h1>
-  <p>Um sistema de votação simples e intuitivo para eleições estudantis, com módulos para eleitores e administração.</p>
-</div>
+# Sistema de Votação Estudantil 🗳️🏫
+Um sistema de votação simples e intuitivo para eleições estudantis, com módulos para eleitores e administração.
 
 ## 📝 Descrição do Projeto
 
