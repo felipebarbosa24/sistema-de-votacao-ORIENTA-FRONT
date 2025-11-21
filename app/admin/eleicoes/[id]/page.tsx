@@ -109,7 +109,11 @@ export default function ElectionDetailsPage() {
     autoTable(doc, {
       startY: (doc as any).lastAutoTable.finalY + 15,
       head: [["Nome", "CPF", "Data do Voto"]],
-      body: election.voters.map(voter => [voter.name, voter.cpf, new Date(voter.votedAt).toLocaleString('pt-BR')]),
+      body: election.voters.map(voter => {
+        // Formata o CPF para XXX.***.***-XX
+        const maskedCpf = voter.cpf ? `${voter.cpf.substring(0, 3)}.***.***-${voter.cpf.substring(9, 11)}` : "N/A";
+        return [voter.name, maskedCpf, new Date(voter.votedAt).toLocaleString('pt-BR')];
+      }),
       theme: 'grid',
       headStyles: { fillColor: primaryColor, textColor: headerTextColor },
       styles: { textColor: textColor, font: 'helvetica' },
