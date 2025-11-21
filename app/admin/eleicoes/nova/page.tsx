@@ -66,13 +66,6 @@ export default function NewElectionPage() {
     }
 
     const elections = storage.getElections()
-    const hasOpenElection = elections.some((e) => e.status === "open")
-
-    if (hasOpenElection) {
-      setError("Já existe uma eleição aberta. Encerre-a antes de criar uma nova.")
-      return
-    }
-
     const newElection = {
       id: Date.now().toString(),
       title: title.trim(),

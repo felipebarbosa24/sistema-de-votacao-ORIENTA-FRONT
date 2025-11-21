@@ -2,6 +2,7 @@ export interface Voter {
   name: string
   cpf: string
   votedAt: string
+  electionId: string
 }
 
 export interface Chapa {
@@ -34,9 +35,14 @@ export const storage = {
     localStorage.setItem("elections", JSON.stringify(elections))
   },
 
-  getActiveElection: (): Election | null => {
+  getActiveElections: (): Election[] => {
     const elections = storage.getElections()
-    return elections.find((e) => e.status === "open") || null
+    return elections.filter((e) => e.status === "open")
+  },
+
+  getActiveElection: (): Election | null => {
+    const active = storage.getActiveElections()
+    return active.length > 0 ? active[0] : null
   },
 
   addVote: (electionId: string, chapaId: string, voter: Voter) => {
@@ -45,14 +51,23 @@ export const storage = {
 
     if (election) {
       election.votes[chapaId] = (election.votes[chapaId] || 0) + 1
-      election.voters.push(voter)
+      election.voters.push({
+        ...voter,
+        electionId,
+      })
       storage.saveElections(elections)
     }
   },
 
+  hasVotedInElection: (cpf: string, electionId: string): boolean => {
+    const elections = storage.getElections()
+    const election = elections.find((e) => e.id === electionId)
+    return election ? election.voters.some((v) => v.cpf === cpf) : false
+  },
+
   hasVoted: (cpf: string): boolean => {
     const elections = storage.getElections()
-    return elections.some((e) => e.voters.some((v) => v.cpf === cpf))
+    return elections.some((e) => e.voters.some((v) => v.cpf === cpf && v.electionId === e.id))
   },
 
   getElectionStats: (electionId: string) => {

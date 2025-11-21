@@ -33,7 +33,7 @@ export default function AdminDashboardPage() {
     return null
   }
 
-  const activeElection = elections.find((e) => e.status === "open")
+  const activeElections = elections.filter((e) => e.status === "open")
   const totalVotes = elections.reduce((sum, e) => {
     return sum + Object.values(e.votes).reduce((a, b) => a + b, 0)
   }, 0)
@@ -65,9 +65,7 @@ export default function AdminDashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="text-3xl font-bold text-foreground">{elections.length}</div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {activeElection ? "1 eleição ativa" : "Nenhuma eleição ativa"}
-                </p>
+                <p className="text-xs text-muted-foreground mt-1">{activeElections.length} eleição(ões) ativa(s)</p>
               </CardContent>
             </Card>
 
