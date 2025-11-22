@@ -109,7 +109,7 @@ export default function AdminDashboardPage() {
               <Button
                 onClick={() => router.push("/admin/eleicoes")}
                 variant="outline"
-                className="bg-[#FFA500] text-white hover:bg-[#E86100] hover:text-white h-16 rounded-xl gap-2 text-base"
+                className="bg-transparent text-black hover:primary-dark h-16 rounded-xl gap-2 text-base"
               >
                 <Vote className="h-5 w-5" />
                 Gerenciar Eleições
@@ -117,7 +117,7 @@ export default function AdminDashboardPage() {
               <Button
                 onClick={() => router.push("/admin/relatorios")}
                 variant="outline"
-                className="bg-[#008BDA] text-white hover:bg-[#004e84] hover:text-white h-16 rounded-xl gap-2 text-base"
+                className="bg-transparent text-black hover:primary-dark h-16 rounded-xl gap-2 text-base"
               >
                 <BarChart3 className="h-5 w-5" />
                 Relatórios e Backup

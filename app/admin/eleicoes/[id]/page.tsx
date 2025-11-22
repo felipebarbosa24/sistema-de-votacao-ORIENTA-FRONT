@@ -158,7 +158,7 @@ export default function ElectionDetailsPage() {
                   Encerrar Eleição
                 </Button>
               )}
-              <Button onClick={exportResults} className="gap-2 rounded-xl bg-[#1e237e] hover:bg-primary-dark text-white">
+              <Button onClick={exportResults} className="gap-2 rounded-xl bg-success hover:bg-success/90 text-white">
                 <Download className="h-4 w-4" />
                 Exportar Relatório
               </Button>
@@ -218,7 +218,7 @@ export default function ElectionDetailsPage() {
                   <div key={chapa.id} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e237e] text-white font-bold">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-success text-white font-bold">
                           {chapa.number}
                         </div>
                         <div>
@@ -237,7 +237,7 @@ export default function ElectionDetailsPage() {
                     </div>
                     <div className="w-full bg-neutral-200 rounded-full h-3 overflow-hidden">
                       <div
-                        className="bg-[#1e237e] h-full rounded-full transition-all duration-500"
+                        className="bg-success h-full rounded-full transition-all duration-500"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
