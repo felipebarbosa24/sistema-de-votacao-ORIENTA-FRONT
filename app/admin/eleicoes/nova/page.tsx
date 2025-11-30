@@ -66,13 +66,6 @@ export default function NewElectionPage() {
     }
 
     const elections = storage.getElections()
-    const hasOpenElection = elections.some((e) => e.status === "open")
-
-    if (hasOpenElection) {
-      setError("Já existe uma eleição aberta. Encerre-a antes de criar uma nova.")
-      return
-    }
-
     const newElection = {
       id: Date.now().toString(),
       title: title.trim(),
@@ -91,7 +84,7 @@ export default function NewElectionPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f5f5f5]">
-      <Header title="NOVA ELEIÇÃO" variant="admin" />
+      <Header title="CRIAR ELEIÇÃO" variant="admin" />
 
       <main className="flex-1 p-4 py-8">
         <div className="container mx-auto max-w-4xl">
@@ -142,7 +135,7 @@ export default function NewElectionPage() {
                       onClick={addChapa}
                       variant="outline"
                       size="sm"
-                      className="gap-2 rounded-xl bg-transparent"
+                      className="bg-[#008BDA] text-white hover:bg-[#004e84] hover:text-white gap-2 rounded-xl"
                     >
                       <PlusCircle className="h-4 w-4" />
                       Adicionar Chapa
@@ -213,7 +206,7 @@ export default function NewElectionPage() {
                   </Button>
                   <Button
                     type="submit"
-                    className="flex-1 h-12 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold"
+                    className="flex-1 h-12 bg-success hover:bg-success/90 text-white rounded-xl font-semibold"
                   >
                     Criar Eleição
                   </Button>

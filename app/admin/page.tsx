@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Eye, EyeOff } from "lucide-react"
 
 const ADMIN_CREDENTIALS = {
-  username: "admin",
+  username: "ivaniltonadm",
   password: "admin123",
 }
 
@@ -42,32 +42,20 @@ export default function AdminLoginPage() {
         <div className="w-full max-w-lg">
           <div className="bg-white rounded-2xl shadow-card p-10 border border-neutral-200">
             <div className="bg-[#1e237e] text-white py-4 px-6 rounded-xl mb-8 -mx-2">
-              <h2 className="text-xl font-bold text-center uppercase">Acessar - Sistema Votação</h2>
+              <h2 className="text-xl font-bold text-center uppercase">Acessar - Painel do Sistema</h2>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="username" className="text-sm font-semibold text-neutral-700">
-                  Email Institucional:
+                  Usuário Administrador:
                 </Label>
                 <Input
                   id="username"
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Digite seu email"
-                  className="h-12 rounded-lg border-neutral-300"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="cpf" className="text-sm font-semibold text-neutral-700">
-                  CPF:
-                </Label>
-                <Input
-                  id="cpf"
-                  type="text"
-                  placeholder="Digite seu CPF"
+                  placeholder="Digite seu usuário"
                   className="h-12 rounded-lg border-neutral-300"
                 />
               </div>
@@ -108,14 +96,6 @@ export default function AdminLoginPage() {
                 ACESSAR
               </Button>
             </form>
-
-            <div className="mt-6 p-4 bg-neutral-100 rounded-lg">
-              <p className="text-xs text-neutral-600 text-center">
-                <strong>Credenciais de teste:</strong>
-                <br />
-                Usuário: admin | Senha: admin123
-              </p>
-            </div>
           </div>
         </div>
       </main>

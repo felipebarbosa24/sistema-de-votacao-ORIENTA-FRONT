@@ -38,19 +38,14 @@ export default function StudentIdentificationPage() {
       return
     }
 
-    if (storage.hasVoted(cpf)) {
-      setError("Este CPF já votou nesta eleição")
-      return
-    }
-
-    const activeElection = storage.getActiveElection()
-    if (!activeElection) {
+    const activeElections = storage.getActiveElections()
+    if (activeElections.length === 0) {
       setError("Não há eleições abertas no momento")
       return
     }
 
     localStorage.setItem("voter", JSON.stringify({ name, cpf }))
-    router.push("/votar")
+    router.push("/selecionar-eleicoes")
   }
 
   return (

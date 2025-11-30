@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function Footer() {
   return (
     <footer className="bg-white mt-auto">
@@ -5,21 +7,33 @@ export function Footer() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex items-center justify-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#4CAF50] flex items-center justify-center">
-                <span className="text-white text-xs font-bold">C</span>
-              </div>
-              <span className="text-sm font-semibold text-neutral-700">CAPIVARA</span>
+              <Image
+                src="/capyvara-logo.jpg"
+                alt="Ícone do ORIENTA"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
+              <span className="text-sm font-semibold text-neutral-700">CAPYVARA</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#2196F3] flex items-center justify-center">
-                <span className="text-white text-xs font-bold">F</span>
-              </div>
+              <Image
+                src="/facepe-logo.png"
+                alt="Ícone do ORIENTA"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
               <span className="text-sm font-semibold text-neutral-700">FACEPE</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#FF9800] flex items-center justify-center">
-                <span className="text-white text-xs font-bold">O</span>
-              </div>
+              <Image
+                src="/logo-orienta.jpeg"
+                alt="Ícone do ORIENTA"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
               <span className="text-sm font-semibold text-neutral-700">ORIENTA</span>
             </div>
           </div>

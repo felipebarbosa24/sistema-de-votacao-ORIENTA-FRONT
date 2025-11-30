@@ -61,7 +61,7 @@ export default function ElectionsManagementPage() {
             </Button>
             <Button
               onClick={() => router.push("/admin/eleicoes/nova")}
-              className="bg-primary hover:bg-primary-dark text-white rounded-xl gap-2"
+              className="bg-[#00c23d] hover:bg-[#006e32] text-white rounded-xl gap-2"
             >
               <PlusCircle className="h-4 w-4" />
               Nova Eleição
@@ -79,7 +79,7 @@ export default function ElectionsManagementPage() {
                   <p className="text-muted-foreground mb-4">Nenhuma eleição criada ainda</p>
                   <Button
                     onClick={() => router.push("/admin/eleicoes/nova")}
-                    className="bg-primary hover:bg-primary-dark text-white rounded-xl gap-2"
+                    className="bg-[#1e237e] hover:bg-primary-dark text-white rounded-xl gap-2"
                   >
                     <PlusCircle className="h-4 w-4" />
                     Criar Primeira Eleição
@@ -125,7 +125,7 @@ export default function ElectionsManagementPage() {
                             onClick={() => router.push(`/admin/eleicoes/${election.id}`)}
                             variant="outline"
                             size="sm"
-                            className="rounded-xl gap-2"
+                            className="bg-[#008BDA] text-white hover:bg-[#004e84] hover:text-white rounded-xl"
                           >
                             <Eye className="h-4 w-4" />
                             Ver Detalhes
@@ -135,7 +135,7 @@ export default function ElectionsManagementPage() {
                               onClick={() => handleCloseElection(election.id)}
                               variant="outline"
                               size="sm"
-                              className="rounded-xl gap-2 text-orange-600 hover:text-orange-700 hover:bg-orange-50"
+                              className="bg-[#CF0E0E] rounded-xl gap-2 text-white hover:text-red-700 hover:bg-orange-50"
                             >
                               <Lock className="h-4 w-4" />
                               Encerrar

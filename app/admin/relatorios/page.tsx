@@ -135,7 +135,7 @@ export default function ReportsPage() {
   }, 0)
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5f5f5]">
+    <div className="min-h-screen flex flex-col [bg-#f5f5f5]">
       <Header title="RELATÓRIOS E BACKUP" variant="admin" />
 
       <main className="flex-1 p-4 py-8">
@@ -175,7 +175,7 @@ export default function ReportsPage() {
             <CardContent className="space-y-3">
               <Button
                 onClick={handleExportSummary}
-                className="w-full h-14 bg-primary hover:bg-primary-dark text-white rounded-xl gap-2 justify-start px-6"
+                className="w-full h-14 bg-[#1e237e] hover:bg-primary-dark text-white rounded-xl gap-2 justify-start px-6"
               >
                 <FileText className="h-5 w-5" />
                 <div className="text-left">
